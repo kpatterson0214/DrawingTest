@@ -30,12 +30,12 @@ namespace DrawingTest
             myPen.Dispose();
             formGraphics.Dispose();
         }
-        private void DrawRectangle()
+        private void DrawRectangle(int x1, int y1, int x2, int y2)
         {
             System.Drawing.Pen myPen;
             myPen = new System.Drawing.Pen(System.Drawing.Color.Red);
             System.Drawing.Graphics formGraphics = this.CreateGraphics();
-            formGraphics.DrawRectangle(myPen, new Rectangle(0, 0, 200, 200));
+            formGraphics.DrawRectangle(myPen, new Rectangle(x1, y1, x2, y2));
             myPen.Dispose();
             formGraphics.Dispose();
         }
@@ -51,7 +51,7 @@ namespace DrawingTest
         private void cmdDraw_Click(object sender, EventArgs e)
         {
             DrawEllipse();
-            DrawRectangle();
+            DrawRectangle(100,100,200,200);
             DrawLine(0,0,200,200);
             DrawLine(200, 0, 0, 200);
         }
