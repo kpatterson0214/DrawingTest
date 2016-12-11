@@ -39,12 +39,12 @@ namespace DrawingTest
             myPen.Dispose();
             formGraphics.Dispose();
         }
-        private void DrawLine()
+        private void DrawLine(float x1, float y1, float x2, float y2)
         {
             System.Drawing.Pen myPen;
             myPen = new System.Drawing.Pen(System.Drawing.Color.Blue);
             System.Drawing.Graphics formGraphics = this.CreateGraphics();
-            formGraphics.DrawLine(myPen, 0, 0, 200, 200);
+            formGraphics.DrawLine(myPen, x1, y1, x2, y2);
             myPen.Dispose();
             formGraphics.Dispose();
         }
@@ -52,7 +52,8 @@ namespace DrawingTest
         {
             DrawEllipse();
             DrawRectangle();
-            DrawLine();
+            DrawLine(0,0,200,200);
+            DrawLine(200, 0, 0, 200);
         }
 
     }
